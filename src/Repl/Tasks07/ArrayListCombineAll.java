@@ -12,8 +12,8 @@ public class ArrayListCombineAll {
     }
     public static ArrayList<String> combineAl(ArrayList<String> wordList1, ArrayList<String> wordList2){
         ArrayList<String > list = new ArrayList<>();
-        for (String each: wordList1)list.add(each);
-        for (String each: wordList2)list.add(each);
+        list.addAll(wordList1);
+        list.addAll(wordList2);
         return list;
     }
 }

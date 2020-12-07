@@ -12,10 +12,9 @@ public class RemoveInstances {
     }
     public static ArrayList<Integer> removeInst(ArrayList<Integer> r, Integer n) {
 
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int each : r)list.add(each);
-        list.removeIf(p-> p==n);
-        return list;
+        r.removeIf(p-> p==n);
+
+        return r;
 
 
     }
