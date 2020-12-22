@@ -11,10 +11,18 @@ public class Telephone {
 
    }
 
-   public String getNumber(String number){
-       return number;
+   public String getNumber(){
+      return number;
    }
 
 
 
+}
+class main{
+    public static void main(String[] args) {
+
+        Telephone telephone = new Telephone();
+        telephone.setNumber("832-299-0295");
+        telephone.getNumber();
+    }
 }

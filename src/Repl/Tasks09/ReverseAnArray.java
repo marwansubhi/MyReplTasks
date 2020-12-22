@@ -1,7 +1,12 @@
 package Repl.Tasks09;
 
+import Repl.Session.AsciiToBinaryConverter;
+
 public class ReverseAnArray {
     public static void main(String[] args) {
+        String str = "Hello Elvira";
+
+        AsciiToBinaryConverter.AsciiToBinConverter(str);
 
     }
 
@@ -22,5 +27,7 @@ public class ReverseAnArray {
 
 
         return arr;
+
+
     }
 }

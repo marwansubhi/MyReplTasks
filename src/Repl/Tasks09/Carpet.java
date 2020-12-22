@@ -8,18 +8,25 @@ public class Carpet {
 
     //Add constructors below
 
-    public Carpet() {
-        totalPrice = 200;
+   public Carpet(){
+       this.width = 300;
+       this.length = 300;
+       this.totalPrice = 200;
+       this.unitPrice = 0;
 
-    }
+   }
 
-    public Carpet(double width, double length, double unitPrice, boolean isPersian) {
+   public Carpet(double width, double length, double unitPrice, boolean isPersian ){
+       this.width = width;
+       this.length = length;
+       this.unitPrice = unitPrice;
+       this.isPersian = isPersian;
+       this.totalPrice =  (isPersian)? (width + length) * unitPrice +200:(width + length) * unitPrice;
 
 
-        this.totalPrice = (width + length) * unitPrice;
-        if (isPersian)totalPrice+=200;
+   }
 
-    }
+
 
 }
 
