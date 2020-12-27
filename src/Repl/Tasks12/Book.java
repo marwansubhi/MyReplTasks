@@ -26,8 +26,6 @@ public class Book {
         if (word.isEmpty()) return "";
         else return word.toUpperCase().charAt(0) + word.toLowerCase().substring(1);
 
-
-        // return null;
     }
 
     /**
@@ -51,14 +49,32 @@ public class Book {
      * isTitleWord("java") => true
      */
     public static Boolean isTitleWord(String word) {
-       switch (word.toLowerCase()){
-           case "a": case "an": case "the": case "and": case "but": case  "for": case "nor":
-           case "or": case "so": case "yet": case "at": case "by": case "in": case "into":
-           case "near": case "of": case "on": case "to": case "than": case "via": return false;
+        switch (word.toLowerCase()) {
+            case "a":
+            case "an":
+            case "the":
+            case "and":
+            case "but":
+            case "for":
+            case "nor":
+            case "or":
+            case "so":
+            case "yet":
+            case "at":
+            case "by":
+            case "in":
+            case "into":
+            case "near":
+            case "of":
+            case "on":
+            case "to":
+            case "than":
+            case "via":
+                return false;
 
-           default: return true;
-       }
-       // return true;
+            default:
+                return true;
+        }
 
     }
 
@@ -77,9 +93,9 @@ public class Book {
      */
     public Book(int id, String author, String title, int pages) {
         setId(id);
-        this.author = author;
-        this.title = title;
-        this.pages = pages;
+        setAuthor(author);
+        setTitle(title);
+        setPages(pages);
 
 
     }
@@ -99,6 +115,14 @@ public class Book {
      *               b.setAuthor("") => assigns "Unknown" to this.author and unknownAuthors++
      */
     public void setAuthor(String author) {
+        if (author.isEmpty()) {
+            this.author = "Unknown";
+            Book.unknownAuthors++;
+        } else if (!author.contains(" ")) {
+            this.author = capitalize(author);
+        } else if (author.contains(" ")) {
+            this.author = capitalize(author.substring(0, author.indexOf(" "))) + " " + capitalize(author.substring(author.indexOf(" ") + 1));
+        }
 
 
     }
@@ -122,8 +146,20 @@ public class Book {
      *              book.setTitle("the Chronicles OF TrumP"); => "The Chronicles of Trump" is assigned to this.title
      */
     public void setTitle(String title) {
+        if (!title.contains(" ") && title.length() > 0) {
+            this.title = capitalize(title);
+        } else if (title.isEmpty()) {
+            this.title = "";
+        } else if (title.contains(" ")) {
 
+            String[] arr = title.split(" ");
+            this.title+= capitalize(arr[0])+" ";
+            for (int i = 1; i < arr.length; i++) {
+                if (isTitleWord(arr[i]) == false) this.title += arr[i].toLowerCase() + " ";
+                if (isTitleWord(arr[i]) == true) this.title += capitalize(arr[i] + " ");
+            }
 
+        }
     }
 
     /**
@@ -134,10 +170,7 @@ public class Book {
      * Book[author=Marufjon T, title=Selenium Cookbook, id=10, pages=300]
      */
     public String toString() {
-
-
-        return "";
-
+        return "Book[" + "author=" + author + ", title=" + title.replaceFirst("null","") + ", id=" + id + ", pages=" + pages + ']';
     }
 
 
@@ -147,9 +180,7 @@ public class Book {
      * @returns unknownAuthors value
      */
     public static int getUnknownAuthors() {
-
-
-        return 0;
+        return unknownAuthors;
     }
 
     /**
@@ -158,9 +189,7 @@ public class Book {
      * @returns pages value
      */
     public int getPages() {
-
-
-        return 0;
+        return pages;
     }
 
     /**
@@ -169,7 +198,7 @@ public class Book {
      * @param pages
      */
     public void setPages(int pages) {
-
+        this.pages = pages;
 
     }
 
@@ -178,7 +207,7 @@ public class Book {
      */
     public String getAuthor() {
 
-        return null;
+        return this.author;
     }
 
 
@@ -188,7 +217,7 @@ public class Book {
     public String getTitle() {
 
 
-        return null;
+        return this.title.replaceFirst("null", "").trim();
     }
 
 
@@ -198,13 +227,14 @@ public class Book {
     public int getId() {
 
 
-        return -1;
+        return id;
     }
 
     /**
      * public setter method for private id
      */
     public void setId(int id) {
+        this.id = id;
 
 
     }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class BinaryToAsciiConverter {
     public static void main(String[] args) {
-        String str1 = "010101000110100001100001011011100110101100100000011110010110111101110101";
+        String str1 = "01010100011010000110000101101110011010110010000001111001011011110111010100100000010011010111010101101000011101000110000101110010";
         str1 = str1.replace(" ","");
 
         if (str1.contains("0") && str1.contains("1") && str1.length() % 8 == 0) {
