@@ -2,7 +2,7 @@ package Repl.Tasks07;
 
 public class ReverseString {
     public static void main(String[] args) {
-        String str = "tneduts";
+        String str = "123456789";
         System.out.println(reverse(str));
     }
 
