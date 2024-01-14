@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class AsciiToBinaryConverter {
 
     public static void main(String[] args) {
-        String str1 = "Thank you Muhtar";
+        String str1 = "Thank you Marwan";
        AsciiToBinConverter(str1);
 
 
