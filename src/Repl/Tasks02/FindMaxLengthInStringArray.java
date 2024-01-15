@@ -13,6 +13,7 @@ public class FindMaxLengthInStringArray {
         }
 
        String brother =  "Hello Yousef";
+        String man = "Hello Marwan";
 
         //write your code below
 
