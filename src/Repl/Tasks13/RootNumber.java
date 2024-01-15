@@ -1,5 +1,6 @@
 package Repl.Tasks13;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,11 +11,75 @@ import java.util.List;
 public class RootNumber {
 
     public static void main(String[] args) {
-        Long n = 5987432548563234459l;
-        System.out.println(Long.MAX_VALUE);
-        System.out.println(n);
+        Long n = 66666666666666666l;
 
-        Long num1 = sumDigit(5985468l);
+        System.out.println(getTheRoot(sumDigit(n)));
+
+
+
+        /*
+        int muNum = 264785685;
+        System.out.println(Long.MAX_VALUE);
+        System.out.println(getTheRoot(sumDigit(n)));
+
+        BigInteger bi1 = new BigInteger("10552547855665455555556548555555554525555555555555555550");
+        BigInteger bi2 = new BigInteger("9653658873652484444444444444444444444445874444444444444444");
+
+        BigInteger bigSum = bi1.add(bi2);
+        BigInteger bigSubtract = bi2.subtract(bi1);
+        BigInteger bigProduct = bi1.multiply(bi2).multiply(bigSubtract);
+
+
+
+        System.out.println("Sum : " + bigSum);
+        System.out.println("Product : " + bigProduct);
+        System.out.println("Subtract: "+bigSubtract);
+        String[] strings =  String.valueOf(bigProduct).split("");
+
+        System.out.println(Arrays.toString(strings));
+        System.out.println(strings.length);
+
+        System.out.println("*************************************************************************");
+
+        System.out.println();
+
+         */
+
+
+
+
+
+    }
+
+    public static Long sumDigit(Long num) {
+
+        Long sum = 0L;
+        while (num > 0) {
+            sum = sum + num % 10;
+            num = num / 10;
+        }
+        return sum;
+    }
+
+    public static Long getTheRoot(Long n) {
+        List<Long> longList = new ArrayList<>();
+        Long n1 = sumDigit(n);
+        Long n2 = sumDigit(n1);
+        longList.addAll(Arrays.asList(n, n1, n2));
+        longList.removeIf(i -> i > 9);
+        return longList.get(0);
+
+    }
+}
+
+
+
+
+
+
+/*
+
+ Long num1 = sumDigit(5985468l);
         Long num2 = sumDigit(num1);
         Long num3 = sumDigit(num2);
         System.out.println("********************");
@@ -30,27 +95,19 @@ public class RootNumber {
         System.out.println(longs);
 
 
+        for (int i = 0, j = 0; i <= longList.size(); i++, j++) {
+            if (longList.get(i) == longList.get(j)) {
+                longList.remove(longList.get(i));
+            }
 
-    }
-
-    public static Long sumDigit(Long num) {
-
-        Long sum = 0L;
-        while (num > 0) {
-            sum = sum + num % 10;
-            num = num / 10;
         }
-        return sum;
-    }
-}
+
+        System.out.println(num%10000);
+        System.out.println(num%1000);
+        System.out.println(num%100);
+        System.out.println(num%10);
 
 
-//        System.out.println(num%10000);
-//        System.out.println(num%1000);
-//        System.out.println(num%100);
-//        System.out.println(num%10);
-
- /*
         int myNum = 0;
         String str = String.valueOf(num);
         String[] strArr = str.split("");

@@ -12,6 +12,8 @@ public class FindMaxLengthInStringArray {
 
         }
 
+       String brother =  "Hello Yousef";
+
         //write your code below
 
         String longWord = words[0];
