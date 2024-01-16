@@ -11,11 +11,7 @@ import java.util.List;
 public class RootNumber {
 
     public static void main(String[] args) {
-        Long n = 66666666666666666l;
-
-        System.out.println(getTheRoot(sumDigit(n)));
-
-
+        Long n = 6666666666666556666l;
 
         /*
         int muNum = 264785685;
@@ -46,7 +42,7 @@ public class RootNumber {
          */
 
 
-
+        System.out.println(digitSum(999999999999999999l));
 
 
     }
@@ -69,6 +65,20 @@ public class RootNumber {
         longList.removeIf(i -> i > 9);
         return longList.get(0);
 
+    }
+
+    public static Long digitSum(Long input) {
+
+        Long sum = 0l;
+        while (input > 0 || sum > 9) {
+            if (input == 0) {
+                input = sum;
+                sum = 0l;
+            }
+            sum += input % 10;
+            input /= 10;
+        }
+        return sum;
     }
 }
 
