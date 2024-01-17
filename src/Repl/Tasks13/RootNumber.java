@@ -13,33 +13,7 @@ public class RootNumber {
     public static void main(String[] args) {
         Long n = 6666666666666556666l;
 
-        /*
-        int muNum = 264785685;
-        System.out.println(Long.MAX_VALUE);
-        System.out.println(getTheRoot(sumDigit(n)));
 
-        BigInteger bi1 = new BigInteger("10552547855665455555556548555555554525555555555555555550");
-        BigInteger bi2 = new BigInteger("9653658873652484444444444444444444444445874444444444444444");
-
-        BigInteger bigSum = bi1.add(bi2);
-        BigInteger bigSubtract = bi2.subtract(bi1);
-        BigInteger bigProduct = bi1.multiply(bi2).multiply(bigSubtract);
-
-
-
-        System.out.println("Sum : " + bigSum);
-        System.out.println("Product : " + bigProduct);
-        System.out.println("Subtract: "+bigSubtract);
-        String[] strings =  String.valueOf(bigProduct).split("");
-
-        System.out.println(Arrays.toString(strings));
-        System.out.println(strings.length);
-
-        System.out.println("*************************************************************************");
-
-        System.out.println();
-
-         */
 
 
         System.out.println(digitSum(999999999999999999l));
@@ -83,7 +57,33 @@ public class RootNumber {
 }
 
 
+ /*
+        int muNum = 264785685;
+        System.out.println(Long.MAX_VALUE);
+        System.out.println(getTheRoot(sumDigit(n)));
 
+        BigInteger bi1 = new BigInteger("10552547855665455555556548555555554525555555555555555550");
+        BigInteger bi2 = new BigInteger("9653658873652484444444444444444444444445874444444444444444");
+
+        BigInteger bigSum = bi1.add(bi2);
+        BigInteger bigSubtract = bi2.subtract(bi1);
+        BigInteger bigProduct = bi1.multiply(bi2).multiply(bigSubtract);
+
+
+
+        System.out.println("Sum : " + bigSum);
+        System.out.println("Product : " + bigProduct);
+        System.out.println("Subtract: "+bigSubtract);
+        String[] strings =  String.valueOf(bigProduct).split("");
+
+        System.out.println(Arrays.toString(strings));
+        System.out.println(strings.length);
+
+        System.out.println("*************************************************************************");
+
+        System.out.println();
+
+         */
 
 
 
